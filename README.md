@@ -71,7 +71,7 @@ Doing all this will give us this as a new entry:
     "srvc": "tcp/5070"
 }
 ```
-**Editing an Existing Entry to a Json File**
+**Editing an Existing Entry in a Json File**
 -----------------------------------------
 Our second sample json file is slightly different compared to the first one. It has entries under a person's name, so working with it will be slightly different. The second sample json file can be seen below.
 
