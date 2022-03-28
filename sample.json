@@ -1,0 +1,23 @@
+[
+    {
+      "id": 100,
+      "sorc": "1.2.3.4",
+      "dest": "5.4.3.2",
+      "srvc": "tcp/22",
+      "desc": "Data Center A"
+    },
+    {
+      "id": 101,
+      "sorc": "1.2.3.4",
+      "dest": "5.4.3.2",
+      "srvc": "tcp/80",
+      "desc": "Data Center B"
+    },
+    {
+      "id": 102,
+      "sorc": "1.2.3.4",
+      "dest": "5.4.3.2",
+      "srvc": "tcp/443",
+      "desc": "Data Center B"
+    }
+]
