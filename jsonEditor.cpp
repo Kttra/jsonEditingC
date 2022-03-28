@@ -80,7 +80,7 @@ int main() {
 	file4 << std::setw(4) << jsonObject2;
 
 	//Close the file
-    file4.close();
+    	file4.close();
 
 	//Wait for input from user before ending the program
 	std::string nothing;
