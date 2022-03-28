@@ -91,7 +91,7 @@ Our second sample json file is slightly different compared to the first one. It 
    }
 }
 ```
-Let's say we made multiple mistakes in Marco's entry and now we want to edit it. Editing the json file is very similar to what we did above. However, you may notice that this json file has an array in the "Days Participated". We can use the json's library built in array function to create a json array or we can use the push_back function to add a day to it. I am going to skip how to read the json file into a jsonobject, so if you want to know how to do that, you can look at the source code.
+Let's say we made multiple mistakes in Marco's entry and now we want to edit it. Editing the json file is very similar to what we did above. However, you may notice that this json file has an array in the "Days Participated". We can use the json's library built in array function to create a json array or we can use the push_back function to add a day to it. I am going to skip how to read the json file into a jsonobject because that was covered above and can also be seen in the source code.
 
 ```
 //Editing a current entry
