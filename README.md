@@ -129,3 +129,31 @@ The new edits will give us this result:
     }
 }
 ```
+**Iterating over Keys**
+---------------------------------
+Iterating over keys may be helpful to get values very quickly, but the problem is that not all json objects are composed of key-value pairs. So the following code may not always work.
+
+```
+for (auto itr = jsonObject2.begin(); itr != jsonObject2.end(); ++itr) {
+  std::cout << "key: " << itr.key() << " value: " << itr.value() << "\n";
+}
+```
+Running the code above will print out:
+
+```
+key: Joe value: {"Age":20,"Best Time":"0:55","Days Participated":["Monday","Wednesday","Thursday"],"Lap Time":"1:02"}
+key: Marco value: {"Age":19,"Best Time":"1:32","Days Participated":["Saturday","Sunday","Tuesday"],"Lap Time":"2:11"}
+```
+
+Similarly, we can iterate over a json array.
+```
+for (auto arrayItr = jsonObject2["Marco"].begin();
+	arrayItr != jsonObject2["Marco"].end();
+	++arrayItr) {
+	std::cout << *arrayItr << " ";
+}
+```
+If we iterate over Marco's entry, we get:
+```
+19 "1:32" ["Saturday","Sunday","Tuesday"] "2:11"
+```
