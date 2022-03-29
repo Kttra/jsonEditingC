@@ -1,4 +1,4 @@
-# Json Editor (C++)
+# Json Editing (C++)
 A program that showcases how to read and write json files in C++. The purpose of this project is to give a general idea of how [nlohmann's json](https://github.com/nlohmann/json) library works. The cpp file has two parts where we first show how to add an entry to the json file and the second part shows how to edit an existing entry.
 
 **Reading and Writing a Json File**
