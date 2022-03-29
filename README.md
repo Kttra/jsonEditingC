@@ -153,7 +153,7 @@ for (auto arrayItr = jsonObject2["Marco"].begin();
 	std::cout << *arrayItr << " ";
 }
 ```
-If we iterate over Marco's entry, we get:
+Unlike keys, arrayItr points to values since the keys are simply indices. If we iterate over Marco's entry, we get:
 ```
 19 "1:32" ["Saturday","Sunday","Tuesday"] "2:11"
 ```
