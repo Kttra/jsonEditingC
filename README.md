@@ -4,7 +4,7 @@ A program that showcases how to read and write json files in C++. The purpose of
 **Reading and Writing a Json File**
 -----------------------------------------
 Example of how to read and write a json file. If you wish to open from a specific directory, replace ```sample.json``` with something like this ```D:\\Users\\Username\\Desktop\\sample.json```.
-```
+```cpp
 //Read Json File into a jsonObject
 std::ifstream file;
 file.open("sample.json");
@@ -25,7 +25,7 @@ std::cout << jsonObject.dump(2);
 **Adding a New Entry to a Json File**
 -----------------------------------------
 Currently our sample.json file looks like this:
-```
+```json
 [
     {
       "id": 100,
@@ -50,7 +50,7 @@ Currently our sample.json file looks like this:
     }
 ]
 ```
-Let's say we want to add a new entry into it. To do so, we can find out how many entries there are (thus giving us their indexes) and then add a new entry at the next index. In the above json file, we can see that there are 3 entries. We can type in 3 for the index or we can use the json file's built in size function.
+Let's say we want to add a new entry into it. To do so, we can find out how many entries there are (thus giving us their indexes) and then add a new entry at the next index. In the above json file, we can see that there are 3 entries. We can type in 3 for the index or we can use the json file's built in size function.cpp
 ```
 //Add a new entry at the 3rd index
 int jsonSize = jsonObject.size();
@@ -62,7 +62,7 @@ jsonObject[jsonSize]["desc"] = "Data Center C";
 ```
 Doing all this will give us this as a new entry:
 
-```
+```json
 {
     "desc": "Data Center C",
     "dest": "5.4.3.2",
@@ -75,7 +75,7 @@ Doing all this will give us this as a new entry:
 -----------------------------------------
 Our second sample json file is slightly different compared to the first one. It has entries under a person's name, so working with it will be slightly different. The second sample json file can be seen below.
 
-```
+```json
 {
    "Joe":{
       "Age": 20,
@@ -93,7 +93,7 @@ Our second sample json file is slightly different compared to the first one. It 
 ```
 Let's say we made multiple mistakes in Marco's entry and now we want to edit it. Editing the json file is very similar to what we did above. However, you may notice that this json file has an array in the "Days Participated". We can use the json's library built in array function to create a json array or we can use the push_back function to add a day to it. I am going to skip how to read the json file into a jsonobject because that was covered above and can also be seen in the source code.
 
-```
+```cpp
 //Editing a current entry
 jsonObject["Marco"]["Age"] = 19;
 jsonObject["Marco"]["Lap Time"] = "2:11";
@@ -105,7 +105,7 @@ jsonObject2["Marco"]["Days Participated"] = json_array;
 jsonObject2["Marco"]["Days Participated"].push_back("Tuesday");
 ```
 The new edits will give us this result:
-```
+```json
 {
     "Joe": {
         "Age": 20,
@@ -133,7 +133,7 @@ The new edits will give us this result:
 ---------------------------------
 Iterating over keys may be helpful to get values very quickly, but the problem is that not all json objects are composed of key-value pairs. So the following code may not always work.
 
-```
+```cpp
 for (auto itr = jsonObject2.begin(); itr != jsonObject2.end(); ++itr) {
   std::cout << "key: " << itr.key() << " value: " << itr.value() << "\n";
 }
@@ -146,7 +146,7 @@ key: Marco value: {"Age":19,"Best Time":"1:32","Days Participated":["Saturday","
 ```
 
 Similarly, we can iterate over a json array.
-```
+```cpp
 for (auto arrayItr = jsonObject2["Marco"].begin();
 	arrayItr != jsonObject2["Marco"].end();
 	++arrayItr) {
